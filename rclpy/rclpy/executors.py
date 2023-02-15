@@ -733,6 +733,7 @@ class MultiThreadedExecutor(Executor):
             except NotImplementedError:
                 num_threads = 1
         self._executor = ThreadPoolExecutor(num_threads)
+        self._futures = []
 
     def _spin_once_impl(
         self,
@@ -752,6 +753,11 @@ class MultiThreadedExecutor(Executor):
             pass
         else:
             self._executor.submit(handler)
+            self._futures.append(handler)
+            for future in self._futures:  # check for any exceptions
+                if future.done():
+                    self._futures.remove(future)
+                    future.result()
 
     def spin_once(self, timeout_sec: float = None) -> None:
         self._spin_once_impl(timeout_sec)

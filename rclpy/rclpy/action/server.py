@@ -326,8 +326,7 @@ class ActionServer(Waitable):
         except Exception as ex:
             # Create an empty result so that we can still send a response to the client
             execute_result = self._action_type.Result()
-            self._logger.error('Error raised in execute callback: {0}'.format(ex))
-            traceback.print_exc()
+            self._node.get_logger().error('Error raised in execute callback: {0}'.format(traceback.format_exc()))
 
         # If user did not trigger a terminal state, assume aborted
         if goal_handle.is_active:

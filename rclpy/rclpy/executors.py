@@ -735,7 +735,6 @@ class MultiThreadedExecutor(Executor):
                 num_threads = 1
         self._futures = []
         self._executor = ThreadPoolExecutor(num_threads)
-        self._futures = []
 
     def _spin_once_impl(
         self,

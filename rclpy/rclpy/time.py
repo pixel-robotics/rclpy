@@ -55,7 +55,11 @@ class Time:
         """:return: the total number of nanoseconds since the clock's epoch."""
         return self._time_handle.nanoseconds
 
-    def seconds_nanoseconds(self) -> Tuple[int, int]:
+    @property
+    def seconds(self):
+        return self.nanoseconds / CONVERSION_CONSTANT
+
+    def seconds_nanoseconds(self)  -> Tuple[int, int]:
         """
         Get time separated into seconds and nanoseconds components.
 

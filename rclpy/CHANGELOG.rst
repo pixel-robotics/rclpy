@@ -2,6 +2,26 @@
 Changelog for package rclpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+7.1.9 (2026-01-21)
+------------------
+* add spinning state for the Executor classes. (backport `#1510 <https://github.com/ros2/rclpy/issues/1510>`_) (`#1576 <https://github.com/ros2/rclpy/issues/1576>`_)
+  * add spinning state for the Executor classes. (`#1510 <https://github.com/ros2/rclpy/issues/1510>`_)
+  (cherry picked from commit cf9240affbb814573e2edb7c0e119273690823d9)
+  Co-authored-by: Tomoya Fujita <Tomoya.Fujita@sony.com>
+* Fix issues with resuming async tasks awaiting a future (backport `#1469 <https://github.com/ros2/rclpy/issues/1469>`_) (`#1560 <https://github.com/ros2/rclpy/issues/1560>`_)
+  Co-authored-by: Nadav Elkabets <32939935+nadavelkabets@users.noreply.github.com>
+  Co-authored-by: Florian Vahl <git@flova.de>
+* Contributors: Błażej Sowa, mergify[bot]
+
+7.1.8 (2026-01-09)
+------------------
+* Fix a bug on adding unnecessary done callback of future while repeatedly calling spin_until_future_complete (backport `#1374 <https://github.com/ros2/rclpy/issues/1374>`_) (`#1530 <https://github.com/ros2/rclpy/issues/1530>`_)
+* [Jazzy] Improve the compatibility of processing YAML parameter files (`#1549 <https://github.com/ros2/rclpy/issues/1549>`_)
+* Use unconditional wait when possible. (`#1563 <https://github.com/ros2/rclpy/issues/1563>`_) (`#1568 <https://github.com/ros2/rclpy/issues/1568>`_)
+* Allow action servers without execute callback (backport `#1219 <https://github.com/ros2/rclpy/issues/1219>`_) (`#1556 <https://github.com/ros2/rclpy/issues/1556>`_)
+* Add content-filtered-topic interfaces (backport `#1506 <https://github.com/ros2/rclpy/issues/1506>`_) (`#1521 <https://github.com/ros2/rclpy/issues/1521>`_)
+* Contributors: Barry Xu, mergify[bot]
+
 7.1.7 (2025-11-18)
 ------------------
 * Remove accidental tuple (`#1542 <https://github.com/ros2/rclpy/issues/1542>`_) (`#1544 <https://github.com/ros2/rclpy/issues/1544>`_)

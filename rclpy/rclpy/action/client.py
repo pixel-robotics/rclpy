@@ -178,9 +178,11 @@ class ActionClient(Waitable):
         # key: UUID in bytes, value: callback function
         self._feedback_callbacks = {}
 
+        self._logger = self._node.get_logger().get_child('action_client')
+        self._lock = threading.Lock()
+
         callback_group.add_entity(self)
         self._node.add_waitable(self)
-        self._logger = self._node.get_logger().get_child('action_client')
 
         self._lock = threading.Lock()
 
